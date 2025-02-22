@@ -2,10 +2,10 @@
 title: Inicio na Programacao
 created_at: 2025-02-21T15:00:00Z
 updated_at: 2025-02-21T15:00:00Z
-image_url:https://img.freepik.com/vetores-premium/desenvolvimento-da-web-codificacao-e-programacao-de-codigo-de-computador-de-banner-futuristico-no-laptop_3482-5572.jpg
+image_url : https://img.freepik.com/vetores-premium/desenvolvimento-da-web-codificacao-e-programacao-de-codigo-de-computador-de-banner-futuristico-no-laptop_3482-5572.jpg
 ---
 
-
+  <!-- ![enter image description here](https://img.freepik.com/vetores-premium/desenvolvimento-da-web-codificacao-e-programacao-de-codigo-de-computador-de-banner-futuristico-no-laptop_3482-5572.jpg) -->
 
 # Como Começar a Estudar Programação: Foco em Algoritmos e Lógica
 
