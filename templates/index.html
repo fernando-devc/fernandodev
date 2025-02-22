@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Meu Blog{% endblock %}
+
+{% block content %}
+<!-- Seção de Projetos -->
+<div class="bg-white shadow sm:rounded-lg mb-8">
+    <div class="px-4 py-5 sm:p-6">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Projetos em Destaque</h2>
+            <a href="/projects" class="text-indigo-600 hover:text-indigo-700 font-medium">
+                Ver todos os projetos →
+            </a>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {% for project in projects %}
+            {% if loop.index <= 3 %}
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 hover:text-gray-600">
+                        <a href="/projects/{{ project.slug }}">{{ project.title }}</a>
+                    </h3>
+                    <p class="mt-2 text-gray-600">{{ project.description }}</p>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2">
+                            {% for tech in project.technologies %}
+                            <span class="px-2 py-1 text-sm bg-gray-100 rounded-full text-gray-700">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Seção de Posts -->
+<div class="bg-white shadow sm:rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Posts Recentes</h2>
+        <div class="space-y-8">
+            {% for post in posts %}
+            <article class="border-b border-gray-200 pb-8 last:border-b-0">
+                <h3 class="text-2xl font-semibold text-gray-900 hover:text-gray-600">
+                    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+                </h3>
+                <time datetime="{{ post.created_at }}" class="text-sm text-gray-500">
+                    {{ post.created_at | date(format="%d/%m/%Y") }}
+                </time>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

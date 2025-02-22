@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }} - Projetos{% endblock %}
+
+{% block content %}
+<article class="bg-white shadow sm:rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">{{ project.title }}</h1>
+            <p class="mt-2 text-gray-600">{{ project.description }}</p>
+            
+            <div class="mt-4 flex flex-wrap gap-2">
+                {% for tech in project.technologies %}
+                <span class="px-2 py-1 text-sm bg-gray-100 rounded-full text-gray-700">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            
+            <div class="mt-4 flex gap-4">
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" target="_blank" rel="noopener" 
+                   class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Ver no GitHub
+                </a>
+                {% endif %}
+                
+                {% if project.live_url %}
+                <a href="{{ project.live_url }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Ver Projeto
+                </a>
+                {% endif %}
+            </div>
+        </header>
+        
+        <div class="prose prose-lg max-w-none">
+            {{ project.content | safe }}
+        </div>
+    </div>
+</article>
+{% endblock %} 
