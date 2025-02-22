@@ -49,19 +49,12 @@ Aqui está um exemplo simples de um algoritmo para verificar se um número é pa
 ```javascript
 
 function  verificarParOuImpar(numero) {
-
-if (numero % 2 === 0) {
-
-return  "Par";
-
-} else {
-
-return  "Ímpar";
-
+  if (numero % 2 === 0) {
+  return  "Par";
+  } else {
+  return  "Ímpar";
+  }
 }
+console.log(verificarParOuImpar(7)); // Ímpar
 
-}
-
-  
-
-console.log(verificarParOuImpar(7)); // Saída: "Ímpar"
+```
