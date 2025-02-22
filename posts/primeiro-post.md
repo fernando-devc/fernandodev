@@ -1,5 +1,5 @@
 ---
-title: Meu Primeiro Post
+title: Primeiro Post
 created_at: 2024-03-20T10:00:00Z
 updated_at: 2024-03-20T10:00:00Z
 ---

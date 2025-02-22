@@ -24,8 +24,8 @@ fn parse_markdown_post(content: &str) -> Option<Post> {
         let metadata = parts[1];
         let content = parts[2];
         
-
         let mut title = String::new();
+        let mut image_url = None;
         let mut created_at = chrono::Utc::now();
         let mut updated_at = chrono::Utc::now();
         
@@ -33,6 +33,7 @@ fn parse_markdown_post(content: &str) -> Option<Post> {
             if let Some((key, value)) = line.split_once(':') {
                 match key.trim() {
                     "title" => title = value.trim().to_string(),
+                    "image_url" => image_url = Some(value.trim().to_string()),
                     "created_at" => {
                         if let Ok(date) = chrono::DateTime::parse_from_rfc3339(value.trim()) {
                             created_at = date.with_timezone(&chrono::Utc);
@@ -58,6 +59,7 @@ fn parse_markdown_post(content: &str) -> Option<Post> {
             title,
             slug,
             content: html_output,
+            image_url,
             created_at,
             updated_at,
         })
