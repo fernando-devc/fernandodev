@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Meu Blog{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/hero.css">
 </head>
-<body class="bg-gray-50 dark:bg-dark-bg-primary text-gray-900 dark:text-gray-100">
+<body class="bg-gray-50 dark:bg-dark-bg-primary ">
     {% include "components/header.html" %}
     
-    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <main class=" ">
         {% block content %}{% endblock %}
     </main>
     
-    <footer class="bg-white dark:bg-dark-bg-secondary border-t border-gray-200 dark:border-dark-bg-tertiary mt-12">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-white dark:bg-dark-bg-secondary border-t border-gray-200 dark:border-dark-bg-tertiary ">
+        <div class=" mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <p class="text-center text-gray-500 dark:text-gray-400">&copy; 2024 Meu Blog</p>
         </div>
     </footer>
